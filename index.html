@@ -1,39 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tasamim Almo7tref</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>معرض التصاميم</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="topbar">
-    <div class="logo">Tasamim Almo7tref</div>
-    <button class="icon-btn" onclick="toggleSidebar()">☰</button>
-  </div>
+  <header>
+    <h1>✨ معرض إبداعاتي ✨</h1>
+    <nav>
+      <a href="#">الرئيسية</a>
+      <a href="#">التصاميم</a>
+      <a href="#">تواصل</a>
+    </nav>
+  </header>
 
-  <div class="search-section">
-    <input type="text" id="searchInput" placeholder="ابحث عن تصميم..." onkeyup="searchCards()" />
-  </div>
-
-  <div class="app">
-    <div class="main">
-      <h2>التصاميم</h2>
-      <div class="grid" id="cardsContainer">
-        <div class="card"><img src="assets/sample1.jpg" alt="تصميم 1"><p>تصميم 1</p></div>
-        <div class="card"><img src="assets/sample2.jpg" alt="تصميم 2"><p>تصميم 2</p></div>
-        <div class="card"><img src="assets/sample3.jpg" alt="تصميم 3"><p>تصميم 3</p></div>
+  <main>
+    <section class="gallery">
+      <h2>أعمالي</h2>
+      <div class="images">
+        <img src="assets/sample1.jpg" alt="تصميم 1">
+        <img src="assets/sample2.jpg" alt="تصميم 2">
+        <img src="assets/sample3.jpg" alt="تصميم 3">
       </div>
-    </div>
-    <div class="sidebar" id="sidebar" aria-hidden="true">
-      <h3>الأقسام</h3>
-      <ul id="sectionsList">
-        <li>شعارات</li>
-        <li>بطاقات</li>
-        <li>أسماء مزخرفة</li>
-      </ul>
-    </div>
-  </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 جميع الحقوق محفوظة - مصمم الأسماء المزخرفة</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
