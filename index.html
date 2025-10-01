@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasamim Almo7tref</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="logo">Tasamim Almo7tref</div>
+    <button class="icon-btn" onclick="toggleSidebar()">☰</button>
+  </div>
+
+  <div class="search-section">
+    <input type="text" id="searchInput" placeholder="ابحث عن تصميم..." onkeyup="searchCards()" />
+  </div>
+
+  <div class="app">
+    <div class="main">
+      <h2>التصاميم</h2>
+      <div class="grid" id="cardsContainer">
+        <div class="card"><img src="assets/sample1.jpg" alt="تصميم 1"><p>تصميم 1</p></div>
+        <div class="card"><img src="assets/sample2.jpg" alt="تصميم 2"><p>تصميم 2</p></div>
+        <div class="card"><img src="assets/sample3.jpg" alt="تصميم 3"><p>تصميم 3</p></div>
+      </div>
+    </div>
+    <div class="sidebar" id="sidebar" aria-hidden="true">
+      <h3>الأقسام</h3>
+      <ul id="sectionsList">
+        <li>شعارات</li>
+        <li>بطاقات</li>
+        <li>أسماء مزخرفة</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
