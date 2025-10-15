@@ -254,19 +254,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* -------- لوحة التحكم: الدخول بكلمة مرور (محسّن) -------- */
+  
   if(settingsBtn){
-    settingsBtn.addEventListener('click', () => {
-      controlPanel.classList.remove('hidden');
-      // نعرض شاشة الدخول فقط أولاً
-      if(loginArea) loginArea.style.display = 'block';
-      if(panelOptions) panelOptions.classList.add('hidden');
-      if(panelPassword){
-        panelPassword.value = '';
-        // نُعطي تركيز للحقل بعد رندر النافذة (بالتأخير الصغير)
-        setTimeout(()=> panelPassword.focus(), 120);
-      }
-    });
-  }
+  settingsBtn.addEventListener('click', () => {
+    if(!controlPanel) return;
+    controlPanel.classList.remove('hidden');
+
+    // تأكد من وجود شاشة الدخول وخيارات اللوحة
+    if(panelOptions) panelOptions.style.display = 'none';
+    if(loginArea){
+      loginArea.style.display = 'block';
+    }
+
+    // إعادة تعيين الحقل وتركيزه
+    if(panelPassword){
+      panelPassword.value = '';
+      setTimeout(()=> panelPassword.focus(), 150);
+    }
+  });
+    }
 
   if(closePanel){
     closePanel.addEventListener('click', () => controlPanel.classList.add('hidden'));
