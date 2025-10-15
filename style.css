@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+:root{
+  --gold: #ffd700;
+  --gold-20: rgba(255,215,0,0.20);
+  --gold-50: rgba(255,215,0,0.50);
+  --dark-shadow: rgba(0,0,0,0.45);
+}
+
+/* عام */
+*{box-sizing:border-box}
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: url('assets/bg.png') no-repeat center center / cover;
+  color: #222;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* رسالة الترحيب */
+.overlay {position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:1000}
+#welcome-screen { background: var(--gold-20); }
+.welcome-box {
+  background: var(--gold-20);
+  border: 1px solid var(--gold);
+  padding: 28px;
+  border-radius: 14px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+.welcome-box h1 { color: var(--gold); text-shadow: 1px 1px 2px rgba(0,0,0,0.6); margin:0 0 12px 0; }
+#welcome-screen button { background: var(--gold); border: none; padding: 10px 20px; border-radius:10px; cursor:pointer; font-weight:700; }
+
+/* الشريط العلوي */
+.top-bar {
+  background: url('assets/shbg.png') no-repeat center center / cover;
+  display:flex;align-items:center;justify-content:space-between;padding:8px 16px;position:fixed;top:0;width:100%;height:64px;z-index:200;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+}
+.title-area{display:flex;align-items:center;gap:12px;justify-content:center}
+.title-area .logo{width:44px;height:44px}
+#app-title{color:var(--gold);font-size:18px;margin:0;text-shadow: 0 2px 6px rgba(0,0,0,0.45);} /* ظل أسود خفيف */
+
+/* أيقونات */
+.icon-btn{width:44px;height:44px;cursor:pointer}
+
+/* اللوحة الجانبية */
+#side-menu{position:fixed;top:0;right:-260px;width:260px;height:100%;background:var(--gold-20);backdrop-filter:blur(8px);box-shadow:2px 0 12px rgba(0,0,0,0.25);transition:right .28s ease;padding-top:80px;z-index:250}
+#side-menu.active{right:0}
+#close-side{position:absolute;top:10px;right:10px;background:var(--gold);border:none;border-radius:8px;padding:6px 8px;cursor:pointer}
+#side-menu ul{list-style:none;margin:0;padding:0}
+#side-menu li{padding:14px 18px;border-bottom:1px solid rgba(0,0,0,0.06);cursor:pointer;color:#000;text-shadow:1px 1px 3px rgba(255,215,0,0.35);font-weight:600}
+#side-menu li:hover{background:rgba(255,215,0,0.12)}
+
+/* لوحة التحكم (تبويب ذهبي شفاف 50%) */
+#control-panel{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:400}
+#control-panel.hidden{display:none}
+.panel-content{width:340px;background:rgba(255,215,0,0.50);border-radius:14px;padding:18px;border:1px solid var(--gold);backdrop-filter:blur(6px);position:relative}
+.panel-content h3{margin:0 0 8px 0;color:#111}
+.panel-content input, .panel-content textarea, .panel-content button{width:100%;margin-top:8px;padding:8px;border-radius:8px;border:1px solid rgba(0,0,0,0.08)}
+.close-x{position:absolute;top:8px;left:8px;background:transparent;border:none;font-size:18px;cursor:pointer}
+
+/* المحتوى الرئيسي */
+main{margin-top:80px;padding:18px}
+
+/* أقسام */
+.app-section{display:none;animation:fadeIn .35s ease}
+.app-section.active{display:block}
+
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* شبكات وبطاقات */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:12px}
+.result-card, .grid img{background:rgba(255,255,255,0.02);border:1px solid rgba(0,0,0,0.06);padding:10px;border-radius:8px}
+
+/* أدوات ومعاينة */
+.tools-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+.preview-box{margin-top:14px;border-radius:10px;padding:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(0,0,0,0.06)}
+.controls-down{margin-top:12px}
+
+/* مدنونة */
+.muted{opacity:0.8;color:#222}
+
+/* استجابات سريعة */
+@media(max-width:720px){
+  .title-area h2{font-size:15px}
+  .icon-btn{width:36px;height:36px}
+  .panel-content{width:92%}
+  }
