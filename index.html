@@ -1,141 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>تصاميمي</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div id="welcome" class="welcome" aria-hidden="false">
-    <div class="welcome-card">
-      <h1>🎨 أهلاً بك في <span>تصاميمي</span></h1>
-      <p>منصتك لحفظ ومشاركة التصاميم والملفات</p>
-      <div class="welcome-actions">
-        <button id="startBtn" class="btn primary">ابدأ</button>
-        <button id="skipBtn" class="btn secondary">تخطي</button>
-      </div>
-    </div>
-  </div>
-
-  <header class="topbar" role="banner">
-    <div class="left">
-      <button id="toggleSidebar" class="icon-btn">📂</button>
-      <h1 class="logo">تصاميمي</h1>
-    </div>
-    <div class="right">
-      <button id="adminBtn" class="icon-btn">🔑</button>
-    </div>
-  </header>
-
-  <section class="search-section" id="searchSection">
-    <input id="searchInput" placeholder="ابحث عن قسم أو ملف... 🔍" />
-  </section>
-
-  <div class="app">
-    <aside id="sidebar" class="sidebar" aria-hidden="true">
-      <h3>الأقسام</h3>
-      <ul id="sectionsList"></ul>
-    </aside>
-
-    <main id="main" class="main">
-      <p class="placeholder">اختر قسماً من القائمة أو أضف جديداً من لوحة التحكم ✨</p>
-    </main>
-  </div>
-
-  <div id="viewer" class="modal" aria-hidden="true">
-    <div class="modal-card">
-      <button id="closeViewer" class="close">✖</button>
-      <h2 id="viewerTitle"></h2>
-      <div id="viewerBody"></div>
-      <div class="modal-actions">
-        <button id="downloadBtn" class="btn primary">⬇️ تحميل</button>
-        <button id="copyBtn" class="btn secondary">📋 نسخ الرابط</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="loginModal" class="modal" aria-hidden="true">
-    <div class="modal-card small">
-      <button id="closeLogin" class="close">✖</button>
-      <h2>🔒 تسجيل الدخول</h2>
-      <input id="adminPassword" type="password" placeholder="أدخل كلمة المرور" />
-      <p id="loginError" class="error"></p>
-      <div class="modal-actions">
-        <button id="loginBtn" class="btn primary">دخول</button>
-      </div>
-    </div>
-  </div>
-
-  <div id="adminModal" class="modal" aria-hidden="true">
-    <div class="modal-card lg">
-      <button id="closeAdmin" class="close">✖</button>
-      <h2>⚙️ لوحة التحكم</h2>
-
-      <section class="admin-row">
-        <div>
-          <h4>إضافة قسم</h4>
-          <input id="newSectionName" placeholder="اسم القسم الجديد" />
-          <button id="addSectionBtn" class="btn primary">➕ إضافة قسم</button>
-        </div>
-
-        <div>
-          <h4>إدارة الأقسام</h4>
-          <select id="editSectionSelect"></select>
-          <input id="renameSectionInput" placeholder="اسم جديد" />
-          <button id="renameSectionBtn" class="btn">✏️ إعادة تسمية</button>
-          <button id="deleteSectionBtn" class="btn danger">🗑 حذف القسم</button>
-        </div>
-      </section>
-
-      <hr />
-
-      <section class="admin-row">
-        <div>
-          <h4>إضافة ملف / صورة</h4>
-          <select id="fileSectionSelect"></select>
-          <input id="fileNameInput" placeholder="اسم الملف" />
-          <input id="fileUrlInput" placeholder="رابط الملف (اختياري)" />
-          <input id="fileUploadInput" type="file" accept="image/*,application/*" />
-          <select id="fileTypeSelect"><option value="image">صورة</option><option value="file">ملف</option></select>
-          <button id="saveFileBtn" class="btn primary">💾 حفظ الملف</button>
-          <button id="clearUploads" class="btn secondary">🧹 مسح الحقول</button>
-        </div>
-
-        <div>
-          <h4>ملفات القسم</h4>
-          <div id="sectionFilesList" class="files-list"></div>
-        </div>
-      </section>
-
-      <hr />
-
-      <section>
-        <h4>تخصيص الألوان</h4>
-        <label>لون الشريط العلوي <input id="headerColor" type="color" /></label>
-        <label>لون النص <input id="textColor" type="color" /></label>
-        <label>خلفية الصفحة <input id="bgColor" type="color" /></label>
-        <div class="admin-actions">
-          <button id="saveColors" class="btn primary">💾 حفظ الألوان</button>
-        </div>
-
-        <h4>ستايلات جاهزة</h4>
-        <select id="themeSelect">
-          <option value="">اختر ستايل...</option>
-          <option value="dark">🌙 Dark</option>
-          <option value="light">☀️ Light</option>
-          <option value="blue">💎 Blue</option>
-          <option value="green">🌿 Green</option>
-          <option value="purple">💜 Purple</option>
-        </select>
-        <div id="themePreview" class="theme-preview">معاينة</div>
-        <div class="admin-actions">
-          <button id="saveTheme" class="btn primary">💾 حفظ الستايل</button>
-        </div>
-      </section>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-  </html>
