@@ -241,9 +241,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // عند الدخول، نعرض البيانات المخزنة داخل لوحة التحكم
       document.getElementById('about-text').value = aboutText;
       document.getElementById('contact-text').value = contactText;
-    } else {
-      alert('كلمة المرور غير صحيحة');
-    }
+     else {
+  alert('كلمة المرور غير صحيحة');
+  panelPassword.value = '';
+  panelPassword.focus();
+}
   });
 
   savePasswordBtn.addEventListener('click', () => {
